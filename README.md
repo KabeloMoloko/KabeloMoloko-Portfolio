@@ -1,84 +1,42 @@
 # KabeloMoloko-Portfolio
-🚗 Car Voting System
+# 🚗 Car Voting System
 
-A client-server based application that allows users to vote for their favourite cars in a secure and structured environment.
+## 📖 Description
+The Car Voting System is a client-server based application that allows users to vote for their preferred cars through a centralized platform. Users connect to the system via a client interface where they can log in, view a list of available cars, and cast their vote.
 
-📖 Overview
+The server handles all client requests, processes votes, enforces the rule that each user can only vote once, and communicates with the database to store and retrieve information. This ensures that all voting data is managed securely and consistently.
 
-The Car Voting System is a distributed application where users connect through a client interface to vote for their preferred cars. The system ensures that each user can only vote once while maintaining accurate and secure data storage.
+The system is developed using Java, with socket programming enabling communication between the client and server. JDBC is used to connect the server to a MySQL database, which stores user information, car details, and voting records. A graphical user interface built using Java Swing allows users to interact with the system easily.
 
-The server manages all client requests, processes votes, and communicates with the database to store and retrieve information efficiently.
+---
 
-🧩 Features
-🔐 User authentication (login system)
-🚗 View available cars
-🗳️ Cast a vote
-✅ One-user-one-vote enforcement
-⚡ Real-time vote processing
-💾 Secure database storage
-🏗️ System Architecture
-[ Client (GUI) ]  <---->  [ Server ]  <---->  [ Database ]
-   (Swing)              (Java Sockets)        (MySQL)
-Client Layer: Handles user interaction (Java Swing)
-Server Layer: Processes requests and business logic
-Database Layer: Stores users, cars, and votes
-👨‍💻 My Role
+## ⚙️ Installation Instructions
 
-I was responsible for integrating the server with the database using JDBC.
+### Prerequisites
+- Java JDK  
+- MySQL  
+- NetBeans IDE (or any Java IDE)  
 
-Configured database connection (URL, username, password)
-Integrated JDBC driver in NetBeans IDE
-Implemented SQL queries for:
-User authentication
-Retrieving car data
-Recording votes
-Updating vote counts
-Used PreparedStatement to prevent SQL injection
-Implemented exception handling for reliability
-Ensured proper resource management (closing connections, statements, result sets)
-🛠️ Technologies Used
-Java
-NetBeans IDE
-Socket Programming (ServerSocket, Socket)
-JDBC (Java Database Connectivity)
-MySQL
-Java Swing (GUI)
-⚙️ How It Works
-User launches the client application
-User logs in or registers
-Client sends request to server
-Server validates user using the database
-User selects a car and submits a vote
-Server records the vote and updates results
-Confirmation is sent back to the client
-📦 Setup Instructions
-Prerequisites
-Java JDK installed
-MySQL installed
-NetBeans IDE
-Steps
+### Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/car-voting-system.git
+Open the project in your IDE (e.g., NetBeans)
+Set up the database:
+Create a MySQL database
+Create the required tables: Users, Cars, Votes
 
-Clone the repository:
-
-git clone https://github.com/your-username/car-voting-system.git
-Open the project in NetBeans
-Set up the MySQL database:
-Create database
-Import/create tables (Users, Cars, Votes)
-
-Update database connection in code:
+Update the database connection in the code:
 
 String url = "jdbc:mysql://localhost:3306/your_db";
 String user = "root";
 String password = "your_password";
-Run the server
+Run the server application
 Run the client application
-📌 Future Improvements
-🌐 Convert to web application (Spring Boot + React)
-🔒 Add password hashing (bcrypt)
-📊 Admin dashboard for managing cars
-📱 Mobile app version
-📈 Live voting results visualization
-📄 License
-
-This project is for educational purposes.
+▶️ Usage Instructions
+Launch the client application
+Register a new account or log in
+View the list of available cars
+Select a car to vote for
+Submit your vote
+Receive confirmation (only one vote per user is allowed)
