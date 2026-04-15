@@ -64,30 +64,31 @@ The system uses three main tables:
 
 ### Steps
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/car-voting-system.git
-Open the project in your IDE (NetBeans recommended)
+1. Open the project in your IDE (NetBeans recommended)
 
-Set up the database
+2. Set up the database
 
-Create a MySQL database (e.g., car_voting_db)
+3. Create a MySQL database (e.g., car_voting_db)
 
-Create the required tables: Users, Cars, Votes
+4. Create the required tables: Users, Cars, Votes
 
 (Optional) Insert sample car data
 
-Update database credentials in the server code
+5. Update database credentials in the server code
 
 java
-String url = "jdbc:mysql://localhost:3306/your_db";
+String url = "jdbc:mysql://localhost:3306/votingSystem_db";
 String user = "root";
-String password = "your_password";
+String password = "password";
 Run the server application first
 
-Run the client application (one or multiple instances)
+6. Run the client application (one or multiple instances)
 
-How It Works
+---
+
+### How It Works
+
+
 Client connects to the server via socket connection
 
 User logs in – credentials verified against the database
