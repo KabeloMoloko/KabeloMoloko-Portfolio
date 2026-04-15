@@ -1,42 +1,103 @@
 # KabeloMoloko-Portfolio
-# 🚗 Car Voting System
+# Car Voting System
 
-## 📖 Description
-The Car Voting System is a client-server based application that allows users to vote for their preferred cars through a centralized platform. Users connect to the system via a client interface where they can log in, view a list of available cars, and cast their vote.
-
-The server handles all client requests, processes votes, enforces the rule that each user can only vote once, and communicates with the database to store and retrieve information. This ensures that all voting data is managed securely and consistently.
-
-The system is developed using Java, with socket programming enabling communication between the client and server. JDBC is used to connect the server to a MySQL database, which stores user information, car details, and voting records. A graphical user interface built using Java Swing allows users to interact with the system easily.
+A client-server based car voting system that allows users to vote for their preferred cars through a centralized application. Users connect via a client interface, log in, view available cars, and cast their votes. The server handles all client requests, ensures users can only vote once, and securely manages all voting data with a MySQL database.
 
 ---
 
-## ⚙️ Installation Instructions
+## Project Overview
+
+This project demonstrates a complete client-server architecture with database integration. It was developed to provide a secure, reliable platform for conducting car preference polls where each user is allowed exactly one vote.
+
+---
+
+## My Role
+
+I was responsible for **connecting the server to the database using JDBC** and ensuring seamless communication between the two components.
+
+### Key Contributions:
+- Configured database connection with connection string, username, and password
+- Integrated JDBC driver within **NetBeans IDE**
+- Wrote and executed SQL queries for:
+  - User authentication
+  - Retrieving car data
+  - Recording votes
+  - Updating vote counts
+- Used **PreparedStatement** to prevent SQL injection attacks
+- Implemented robust **exception handling** for connection failures and query issues
+- Ensured proper closure of database resources to maintain system performance
+
+My role was essential for reliable data storage, vote accuracy, and seamless server-database interaction.
+
+---
+
+## Technologies Used
+
+| Category | Technology |
+|----------|------------|
+| Language | Java |
+| IDE | NetBeans |
+| Networking | Socket Programming (ServerSocket, Socket) |
+| Database Connectivity | JDBC |
+| Database | MySQL |
+| GUI | Java Swing |
+
+---
+
+## Database Schema
+
+The system uses three main tables:
+
+- **Users** – Stores user credentials and voting status
+- **Cars** – Stores car details (ID, name, model, current vote count)
+- **Votes** – Logs each vote with user ID, car ID, and timestamp
+
+---
+
+## Installation Instructions
 
 ### Prerequisites
+
 - Java JDK installed
-- MySQL installed
-- NetBeans IDE (or any Java IDE) installed 
+- MySQL installed and running
+- NetBeans IDE (or any Java IDE)
 
 ### Steps
-1. Clone the repository:
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/your-username/car-voting-system.git
-Open the project in your IDE (e.g., NetBeans)
-Set up the database:
-Create a MySQL database
+Open the project in your IDE (NetBeans recommended)
+
+Set up the database
+
+Create a MySQL database (e.g., car_voting_db)
+
 Create the required tables: Users, Cars, Votes
 
-Update the database connection in the code:
+(Optional) Insert sample car data
 
+Update database credentials in the server code
+
+java
 String url = "jdbc:mysql://localhost:3306/your_db";
 String user = "root";
 String password = "your_password";
-Run the server application
-Run the client application
-▶️ Usage Instructions
-Launch the client application
-Register a new account or log in
-View the list of available cars
-Select a car to vote for
-Submit your vote
-Receive confirmation (only one vote per user is allowed)
+Run the server application first
+
+Run the client application (one or multiple instances)
+
+How It Works
+Client connects to the server via socket connection
+
+User logs in – credentials verified against the database
+
+Car list is displayed – retrieved from the Cars table
+
+User votes for a car
+
+Server checks if user has already voted (using Votes table)
+
+If eligible, vote is recorded and car's vote count is incremented
+
+Updated results can be viewed by clients
