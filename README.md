@@ -13,9 +13,9 @@ The system is developed using Java, with socket programming enabling communicati
 ## ⚙️ Installation Instructions
 
 ### Prerequisites
-- Java JDK  
-- MySQL  
-- NetBeans IDE (or any Java IDE)  
+- Java JDK installed
+- MySQL installed
+- NetBeans IDE (or any Java IDE) installed 
 
 ### Steps
 1. Clone the repository:
